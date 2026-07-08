@@ -86,7 +86,7 @@ function AdminDashboardPage() {
       <section className="hero wallet-hero">
         <p className="eyebrow">学校后台</p>
         <h1>补助资金使用管理后台</h1>
-        <p className="hero-copy">查看专项补助计划执行情况、学生补助账户、商户白名单和交易审计记录。</p>
+        <p className="hero-copy">从学校视角查看专项补助发放、使用、失败拦截和到期退回情况。</p>
       </section>
 
       <section className="privacy-note">
@@ -97,7 +97,7 @@ function AdminDashboardPage() {
         <div>
           <p className="eyebrow">到期退回</p>
           <h2>执行到期未使用资金自动退回</h2>
-          <p>选择模拟日期后，系统会扫描已过期且仍有余额的可用补助账户，并退回学校资金池。</p>
+          <p>选择晚于补助有效期的日期后，系统会把未使用余额退回学校资金池。</p>
         </div>
         <label>
           模拟当前日期

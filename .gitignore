@@ -1,5 +1,8 @@
-node_modules
-dist
+node_modules/
+node_modules_pnpm_backup/
+node_modules.pnpm-backup/
+dist/
+.npm-cache/
 .vite
 .pnpm-store
 coverage

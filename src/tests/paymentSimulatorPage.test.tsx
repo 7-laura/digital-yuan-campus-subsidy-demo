@@ -12,6 +12,7 @@ describe("交易模拟页面", () => {
     );
 
     expect(html).toContain("专项补助定向支付模拟");
+    expect(html).toContain("系统会自动判断这笔专项补助能不能使用");
     expect(html).toContain("重置 Demo 数据");
     expect(html).toContain("发起支付");
     expect(html).toContain("张三在一食堂消费 12 元");

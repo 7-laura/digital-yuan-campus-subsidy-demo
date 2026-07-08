@@ -126,6 +126,23 @@ h3 {
   padding: 16px 18px;
 }
 
+.demo-guide ol,
+.boundary-section ul {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.demo-guide li,
+.boundary-section li {
+  color: #405148;
+  line-height: 1.8;
+  margin: 4px 0;
+}
+
+.boundary-section {
+  border-left: 5px solid #17613a;
+}
+
 .wallet-page {
   display: grid;
   gap: 18px;
@@ -277,14 +294,17 @@ h3 {
 
 .transaction-item.success {
   border-left-color: #1f8f52;
+  background: #f0faf2;
 }
 
 .transaction-item.failed {
   border-left-color: #c45d3c;
+  background: #fff5f1;
 }
 
 .transaction-item.frozen {
   border-left-color: #bf8a2b;
+  background: #fff8ec;
 }
 
 .transaction-item strong {
@@ -358,10 +378,20 @@ h3 {
 
 .payment-result.success {
   border-left: 5px solid #1f8f52;
+  background: #f0faf2;
 }
 
 .payment-result.failed {
   border-left: 5px solid #c45d3c;
+  background: #fff5f1;
+}
+
+.payment-result.success h2 {
+  color: #17613a;
+}
+
+.payment-result.failed h2 {
+  color: #a64225;
 }
 
 .payment-result p {
@@ -427,6 +457,9 @@ h3 {
 .refund-result {
   color: #17613a;
   line-height: 1.5;
+  border-radius: 8px;
+  background: #fff8ec;
+  padding: 10px 12px;
 }
 
 .admin-summary-grid {
@@ -510,14 +543,17 @@ h3 {
 
 .refund-row {
   border-left-color: #bf8a2b;
+  background: #fff8ec;
 }
 
 .audit-row.success {
   border-left-color: #1f8f52;
+  background: #f0faf2;
 }
 
 .audit-row.failed {
   border-left-color: #c45d3c;
+  background: #fff5f1;
 }
 
 .status-text.active,

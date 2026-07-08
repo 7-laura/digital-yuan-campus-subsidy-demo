@@ -70,7 +70,7 @@ function StudentWalletPage() {
       <section className="hero wallet-hero">
         <p className="eyebrow">学生钱包</p>
         <h1>张三的专项补助钱包</h1>
-        <p className="hero-copy">查看校园专项补助余额、合约使用规则和最近交易记录。</p>
+        <p className="hero-copy">从学生视角查看专项补助余额、可用范围、限额规则和最近使用记录。</p>
       </section>
 
       <section className="wallet-section student-profile" aria-label="学生基本信息">

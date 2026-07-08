@@ -104,7 +104,7 @@ function PaymentSimulatorPage() {
       <section className="hero wallet-hero">
         <p className="eyebrow">交易模拟</p>
         <h1>专项补助定向支付模拟</h1>
-        <p className="hero-copy">选择学生、商户、补助类型和金额，系统会调用规则引擎自动判断支付是否成功。</p>
+        <p className="hero-copy">选择学生、商户、补助类型和金额，系统会自动判断这笔专项补助能不能使用。</p>
         <button
           className="reset-button"
           onClick={() => {
@@ -171,13 +171,15 @@ function PaymentSimulatorPage() {
           ) : latestResult.success ? (
             <>
               <h2>支付成功</h2>
+              <p>原因说明：本次消费符合专项补助使用规则。</p>
               <p>扣减金额：{formatMoney(latestResult.transaction.amount)}</p>
               <p>剩余余额：{formatMoney(latestResult.updatedAccount?.remainingAmount ?? 0)}</p>
             </>
           ) : (
             <>
               <h2>支付失败</h2>
-              <p>失败原因：{latestResult.message}</p>
+              <p>失败原因：{latestResult.message}。</p>
+              <p>账户余额不会扣减，失败记录会保留用于演示审计。</p>
             </>
           )}
         </aside>

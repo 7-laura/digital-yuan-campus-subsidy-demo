@@ -12,6 +12,7 @@ describe("学校补助管理后台页面", () => {
     );
 
     expect(html).toContain("补助资金使用管理后台");
+    expect(html).toContain("从学校视角查看专项补助发放、使用、失败拦截和到期退回情况");
     expect(html).toContain("学校后台仅用于查看专项补助资金的使用情况，不应查看学生普通钱包消费记录。");
     expect(html).toContain("执行到期未使用资金自动退回");
     expect(html).toContain("执行到期退回");

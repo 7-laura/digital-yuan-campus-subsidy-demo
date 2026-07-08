@@ -12,6 +12,7 @@ describe("学生钱包页面", () => {
     );
 
     expect(html).toContain("张三的专项补助钱包");
+    expect(html).toContain("从学生视角查看专项补助余额");
     expect(html).toContain("20260001");
     expect(html).toContain("wallet-student-zhangsan");
     expect(html).toContain("餐饮补贴");

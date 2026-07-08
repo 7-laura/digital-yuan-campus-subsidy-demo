@@ -92,3 +92,20 @@ export interface PaymentResult {
   updatedAccount?: StudentSubsidyAccount;
   transaction: TransactionRecord;
 }
+
+export interface RefundRecord {
+  refundId: string;
+  studentId: string;
+  accountId: string;
+  planId: string;
+  subsidyType: SubsidyType;
+  amount: number;
+  refundTime: string;
+  reason: string;
+}
+
+export interface RefundResult {
+  updatedAccounts: StudentSubsidyAccount[];
+  refundRecords: RefundRecord[];
+  totalRefundAmount: number;
+}

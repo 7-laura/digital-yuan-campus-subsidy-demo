@@ -6,6 +6,8 @@ export type {
   MerchantWhitelistStatus,
   PaymentRequest,
   PaymentResult,
+  RefundRecord,
+  RefundResult,
   Student,
   StudentStatus,
   StudentSubsidyAccount,

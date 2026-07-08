@@ -6,12 +6,15 @@ import {
   mockStudents,
   mockTransactionRecords
 } from "../data/mockData";
+import { processExpiredSubsidies } from "../domain/refundEngine";
 import { evaluatePayment } from "../domain/ruleEngine";
 import type {
   ContractRule,
   Merchant,
   PaymentRequest,
   PaymentResult,
+  RefundRecord,
+  RefundResult,
   Student,
   StudentSubsidyAccount,
   TransactionRecord
@@ -23,10 +26,12 @@ interface SubsidyState {
   rules: ContractRule[];
   subsidyAccounts: StudentSubsidyAccount[];
   transactions: TransactionRecord[];
+  refundRecords: RefundRecord[];
 }
 
 interface SubsidyContextValue extends SubsidyState {
   submitPayment: (request: PaymentRequest) => PaymentResult;
+  processExpiredRefunds: (currentDate: string) => RefundResult;
   resetDemoData: () => void;
 }
 
@@ -39,8 +44,22 @@ const createInitialState = (): SubsidyState => ({
   merchants: clone(mockMerchants),
   rules: clone(mockContractRules),
   subsidyAccounts: clone(mockStudentSubsidyAccounts),
-  transactions: clone(mockTransactionRecords)
+  transactions: clone(mockTransactionRecords),
+  refundRecords: []
 });
+
+const normalizeState = (state: Partial<SubsidyState>): SubsidyState => {
+  const fallback = createInitialState();
+
+  return {
+    students: state.students ?? fallback.students,
+    merchants: state.merchants ?? fallback.merchants,
+    rules: state.rules ?? fallback.rules,
+    subsidyAccounts: state.subsidyAccounts ?? fallback.subsidyAccounts,
+    transactions: state.transactions ?? fallback.transactions,
+    refundRecords: state.refundRecords ?? []
+  };
+};
 
 const loadInitialState = (): SubsidyState => {
   if (typeof window === "undefined") {
@@ -53,7 +72,7 @@ const loadInitialState = (): SubsidyState => {
   }
 
   try {
-    return JSON.parse(savedState) as SubsidyState;
+    return normalizeState(JSON.parse(savedState) as Partial<SubsidyState>);
   } catch {
     return createInitialState();
   }
@@ -101,6 +120,18 @@ export function SubsidyProvider({ children }: { children: ReactNode }) {
         setState(nextState);
         saveState(nextState);
         return result;
+      },
+      processExpiredRefunds: (currentDate) => {
+        const refundResult = processExpiredSubsidies(state.subsidyAccounts, currentDate);
+        const nextState: SubsidyState = {
+          ...state,
+          subsidyAccounts: refundResult.updatedAccounts,
+          refundRecords: [...refundResult.refundRecords, ...state.refundRecords]
+        };
+
+        setState(nextState);
+        saveState(nextState);
+        return refundResult;
       },
       resetDemoData: () => {
         const initialState = createInitialState();

@@ -380,6 +380,160 @@ h3 {
   grid-template-columns: 1fr 0.8fr 1fr 1fr 0.8fr 2fr;
 }
 
+.admin-page {
+  display: grid;
+  gap: 18px;
+}
+
+.privacy-note {
+  border: 1px solid #d6e1d5;
+  border-left: 5px solid #17613a;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #405148;
+  font-weight: 700;
+  line-height: 1.7;
+  padding: 16px 18px;
+}
+
+.refund-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px auto auto;
+  gap: 14px;
+  align-items: end;
+}
+
+.refund-panel p {
+  color: #4d5e53;
+  line-height: 1.7;
+  margin: 10px 0 0;
+}
+
+.refund-panel label {
+  display: grid;
+  gap: 8px;
+  color: #405148;
+  font-weight: 700;
+}
+
+.refund-panel input {
+  border: 1px solid #cbd8cb;
+  border-radius: 8px;
+  color: #17231d;
+  font: inherit;
+  padding: 10px 12px;
+}
+
+.refund-result {
+  color: #17613a;
+  line-height: 1.5;
+}
+
+.admin-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.admin-summary-card {
+  border: 1px solid #dce6db;
+  border-radius: 8px;
+  background: #fbfdf9;
+  padding: 16px;
+}
+
+.admin-summary-card dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0 0;
+}
+
+.admin-summary-card dt {
+  color: #627368;
+  font-size: 14px;
+}
+
+.admin-summary-card dd {
+  margin: 6px 0 0;
+  color: #17613a;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.admin-table {
+  display: grid;
+  gap: 8px;
+}
+
+.admin-table-header,
+.admin-table-row {
+  display: grid;
+  gap: 12px;
+  align-items: start;
+}
+
+.admin-table-header {
+  color: #627368;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0 12px 6px;
+}
+
+.admin-table-row {
+  border-left: 4px solid #9baaa0;
+  border-radius: 8px;
+  background: #fbfdf9;
+  color: #3f5046;
+  padding: 12px;
+}
+
+.account-table .admin-table-header,
+.account-table .admin-table-row {
+  grid-template-columns: 1fr 1fr 1fr 1fr 0.8fr;
+}
+
+.merchant-table .admin-table-header,
+.merchant-table .admin-table-row {
+  grid-template-columns: 1.2fr 1fr 0.8fr;
+}
+
+.audit-table .admin-table-header,
+.audit-table .admin-table-row {
+  grid-template-columns: 1fr 0.8fr 1fr 0.8fr 0.7fr 2fr;
+}
+
+.refund-table .admin-table-header,
+.refund-table .admin-table-row {
+  grid-template-columns: 1fr 0.8fr 1fr 0.8fr 2fr;
+}
+
+.refund-row {
+  border-left-color: #bf8a2b;
+}
+
+.audit-row.success {
+  border-left-color: #1f8f52;
+}
+
+.audit-row.failed {
+  border-left-color: #c45d3c;
+}
+
+.status-text.active,
+.status-text.approved {
+  color: #17613a;
+}
+
+.status-text.expired,
+.status-text.rejected {
+  color: #c45d3c;
+}
+
+.status-text.refunded {
+  color: #805717;
+}
+
 @media (max-width: 760px) {
   .app-shell {
     width: min(100% - 24px, 1040px);
@@ -392,7 +546,9 @@ h3 {
   .rule-list,
   .simulator-grid,
   .payment-form,
-  .quick-actions {
+  .quick-actions,
+  .admin-summary-grid,
+  .refund-panel {
     grid-template-columns: 1fr;
   }
 
@@ -405,6 +561,21 @@ h3 {
   }
 
   .simulator-record {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-table-header {
+    display: none;
+  }
+
+  .account-table .admin-table-row,
+  .merchant-table .admin-table-row,
+  .audit-table .admin-table-row,
+  .refund-table .admin-table-row {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-summary-card dl {
     grid-template-columns: 1fr;
   }
 }

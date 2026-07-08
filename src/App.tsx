@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AdminDashboardPage from "./pages/AdminDashboardPage";
 import HomePage from "./pages/HomePage";
 import PaymentSimulatorPage from "./pages/PaymentSimulatorPage";
 import StudentWalletPage from "./pages/StudentWalletPage";
@@ -26,6 +27,10 @@ function App() {
 
   if (currentHash === "#payment-simulator") {
     page = <PaymentSimulatorPage />;
+  }
+
+  if (currentHash === "#school-admin") {
+    page = <AdminDashboardPage />;
   }
 
   return <SubsidyProvider>{page}</SubsidyProvider>;

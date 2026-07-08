@@ -52,12 +52,30 @@ h1 {
   line-height: 1.2;
 }
 
+h2,
+h3 {
+  margin: 0;
+  color: #17231d;
+}
+
 .hero-copy {
   max-width: 720px;
   margin: 18px 0 0;
   color: #4d5e53;
   font-size: 18px;
   line-height: 1.7;
+}
+
+.reset-button {
+  margin-top: 18px;
+  border: 1px solid #c9d7ca;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #17613a;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  padding: 11px 16px;
 }
 
 .entry-grid {
@@ -108,13 +126,285 @@ h1 {
   padding: 16px 18px;
 }
 
+.wallet-page {
+  display: grid;
+  gap: 18px;
+}
+
+.back-link {
+  width: fit-content;
+  border: 1px solid #d6e1d5;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #17613a;
+  font-weight: 700;
+  padding: 10px 14px;
+}
+
+.wallet-hero {
+  padding-bottom: 10px;
+}
+
+.wallet-section {
+  border: 1px solid #d6e1d5;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 20px;
+}
+
+.section-title {
+  margin-bottom: 16px;
+}
+
+.student-profile {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.student-profile div {
+  display: grid;
+  gap: 8px;
+}
+
+.student-profile span {
+  color: #627368;
+  font-size: 14px;
+}
+
+.student-profile strong {
+  overflow-wrap: anywhere;
+}
+
+.subsidy-card-grid,
+.rule-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.subsidy-card,
+.rule-card {
+  border: 1px solid #dce6db;
+  border-radius: 8px;
+  background: #fbfdf9;
+  padding: 16px;
+}
+
+.subsidy-card.active {
+  border-left: 5px solid #1f8f52;
+}
+
+.subsidy-card.expired {
+  border-left: 5px solid #9baaa0;
+  background: #f4f6f2;
+}
+
+.subsidy-card.refunded {
+  border-left: 5px solid #bf8a2b;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.status-pill {
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 10px;
+}
+
+.status-pill.active {
+  background: #e4f4e8;
+  color: #17613a;
+}
+
+.status-pill.expired {
+  background: #eef1ec;
+  color: #5e6c62;
+}
+
+.status-pill.refunded {
+  background: #fff3df;
+  color: #805717;
+}
+
+.subsidy-card strong {
+  display: block;
+  color: #17613a;
+  font-size: 28px;
+}
+
+.subsidy-card p,
+.rule-card p {
+  margin: 10px 0 0;
+  color: #5a6b60;
+  line-height: 1.7;
+}
+
+.transaction-table {
+  display: grid;
+  gap: 8px;
+}
+
+.transaction-header,
+.transaction-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0.8fr 0.7fr 2fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.transaction-header {
+  color: #627368;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0 12px 6px;
+}
+
+.transaction-item {
+  border-left: 4px solid #9baaa0;
+  border-radius: 8px;
+  background: #fbfdf9;
+  color: #3f5046;
+  padding: 12px;
+}
+
+.transaction-item.success {
+  border-left-color: #1f8f52;
+}
+
+.transaction-item.failed {
+  border-left-color: #c45d3c;
+}
+
+.transaction-item.frozen {
+  border-left-color: #bf8a2b;
+}
+
+.transaction-item strong {
+  color: #17231d;
+}
+
+.simulator-page {
+  display: grid;
+  gap: 18px;
+}
+
+.simulator-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.payment-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.payment-form label {
+  display: grid;
+  gap: 8px;
+  color: #405148;
+  font-weight: 700;
+}
+
+.payment-form input,
+.payment-form select {
+  width: 100%;
+  border: 1px solid #cbd8cb;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #17231d;
+  font: inherit;
+  padding: 10px 12px;
+}
+
+.primary-button,
+.secondary-button {
+  border: 1px solid #bfd0c2;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  padding: 11px 14px;
+}
+
+.primary-button {
+  align-self: end;
+  background: #17613a;
+  color: #ffffff;
+}
+
+.secondary-button {
+  background: #ffffff;
+  color: #244231;
+  text-align: left;
+}
+
+.payment-result {
+  border: 1px solid #dce6db;
+  border-radius: 8px;
+  background: #fbfdf9;
+  padding: 18px;
+}
+
+.payment-result.success {
+  border-left: 5px solid #1f8f52;
+}
+
+.payment-result.failed {
+  border-left: 5px solid #c45d3c;
+}
+
+.payment-result p {
+  color: #4d5e53;
+  line-height: 1.7;
+  margin: 10px 0 0;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.simulator-record {
+  grid-template-columns: 1fr 0.8fr 1fr 1fr 0.8fr 2fr;
+}
+
 @media (max-width: 760px) {
   .app-shell {
     width: min(100% - 24px, 1040px);
     padding: 32px 0;
   }
 
-  .entry-grid {
+  .entry-grid,
+  .student-profile,
+  .subsidy-card-grid,
+  .rule-list,
+  .simulator-grid,
+  .payment-form,
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction-header {
+    display: none;
+  }
+
+  .transaction-item {
+    grid-template-columns: 1fr;
+  }
+
+  .simulator-record {
     grid-template-columns: 1fr;
   }
 }

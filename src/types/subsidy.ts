@@ -17,6 +17,7 @@ export type SubsidyPlanStatus = "draft" | "active" | "closed";
 export interface Student {
   studentId: string;
   name: string;
+  studentNo: string;
   walletId: string;
   studentType: StudentType;
   status: StudentStatus;

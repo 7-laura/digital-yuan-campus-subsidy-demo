@@ -13,6 +13,7 @@ export const mockStudents: Student[] = [
   {
     studentId: "student-zhangsan",
     name: "张三",
+    studentNo: "20260001",
     walletId: "wallet-student-zhangsan",
     studentType: "undergraduate",
     status: "active"
@@ -20,6 +21,7 @@ export const mockStudents: Student[] = [
   {
     studentId: "student-lisi",
     name: "李四",
+    studentNo: "20260002",
     walletId: "wallet-student-lisi",
     studentType: "undergraduate",
     status: "active"
@@ -27,6 +29,7 @@ export const mockStudents: Student[] = [
   {
     studentId: "student-wangwu",
     name: "王五",
+    studentNo: "20260003",
     walletId: "wallet-student-wangwu",
     studentType: "undergraduate",
     status: "active"

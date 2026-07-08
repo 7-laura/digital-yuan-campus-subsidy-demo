@@ -1,14 +1,20 @@
 import NavEntry from "../components/NavEntry";
 import { mockContractRules, mockMerchants, mockStudents } from "../data/mockData";
 import { navigationEntries } from "../data/navigation";
+import { useSubsidyStore } from "../services/SubsidyContext";
 
 function HomePage() {
+  const { resetDemoData } = useSubsidyStore();
+
   return (
     <main className="app-shell">
       <section className="hero">
         <p className="eyebrow">课程设计 Demo</p>
         <h1>数字人民币校园专项补助定向支付系统</h1>
         <p className="hero-copy">本系统为课程设计 demo，不接入真实数字人民币系统。</p>
+        <button className="reset-button" onClick={resetDemoData} type="button">
+          重置 Demo 数据
+        </button>
       </section>
 
       <nav className="entry-grid" aria-label="功能入口">
